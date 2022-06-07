@@ -8,7 +8,20 @@ public class Game {
     public Game() {
     }
 
+
+    public void wait(int ms) {
+        try
+        {
+            Thread.sleep(ms);
+        }
+        catch(InterruptedException ex)
+        {
+            Thread.currentThread().interrupt();
+        }
+    }
+
     public void greetings(Fighter player) {
+        System.out.println("");
         System.out.println("Bienvenido al juego de java!");
         System.out.println("Cuál es tu nombre guerrero?: ");
         Scanner nameOfPlayer = new Scanner(System.in);
